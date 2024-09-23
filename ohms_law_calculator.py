@@ -14,7 +14,7 @@ def find_voltage():
             voltage = ask_user_for_current_value * ask_user_for_resistance_value
             print(f"The value of the voltage is {voltage}V.")
         except ValueError:
-            print("\nError\nInvalid input.")
+            print("\nError.\nInvalid input.")
     elif ask_what_to_calculate == "2":
         print("If so, give me the values of voltage and resistance so that we could find the value of the current.")
         try:
@@ -23,9 +23,11 @@ def find_voltage():
             current = ask_user_for_voltage_value / ask_user_for_resistance_value
             print(f"The value of the voltage is {current}A.")
         except ZeroDivisionError:
-            print("\nError\nCannot be divide to 0.")
+            print("\nError.\nCannot be divide to 0.")
         except ValueError:
-            print("\nInvalid input.")
+            print("\nError.\nInvalid input.")
+    else:
+        print("Not among the mentioned choices.")
             
 find_voltage()
 
