@@ -1,13 +1,13 @@
 # =========== PSEUDO CODE ==========
 # || ACTUAL CODE ||
-# - Ask the user what they want to calculate: Voltage, Current, or Resistance.
-print("What do you want to calculate?\n1 = Voltage\n2 = Current\n3 = Resistance\nPick from 1-3")
-
-# === Computation using conditional statement ==
+# === Computation using conditional statement ===
 def find_voltage():
-    # - Conditional Statement: If voltage was chosen.
     while True:
+        # - Ask the user what they want to calculate: Voltage, Current, or Resistance.
+        print("What do you want to calculate?\n1 = Voltage\n2 = Current\n3 = Resistance\nPick from 1-3")
         ask_what_to_calculate = input("\nInput your choice here: ")
+        
+        # - Conditional Statement: If voltage was chosen.
         if ask_what_to_calculate == "1":
             print("If so, give me the values of current and resistance so that we could find the value of the voltage.")
             while True:
@@ -27,6 +27,8 @@ def find_voltage():
                 try:
                     ask_user_for_voltage_value = float(input("\nVoltage Value: "))
                     ask_user_for_resistance_value = float(input("Resistance Value: "))
+                    if ask_user_for_resistance_value == 0:
+                        raise ZeroDivisionError
                     current = ask_user_for_voltage_value / ask_user_for_resistance_value
                     print(f"The value of the current is {current}A.")
                     break
@@ -42,6 +44,8 @@ def find_voltage():
                 try:
                     ask_user_for_voltage_value = float(input("\nVoltage Value: "))
                     ask_user_for_current_value = float(input("Current Value: "))
+                    if ask_user_for_current_value == 0:
+                        raise ZeroDivisionError
                     resistance = ask_user_for_voltage_value / ask_user_for_current_value
                     print(f"The value of the resistance is {resistance}Ω.")
                     break
