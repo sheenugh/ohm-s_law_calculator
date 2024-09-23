@@ -22,8 +22,10 @@ def find_voltage():
             ask_user_for_resistance_value = float(input("Resistance Value: "))
             current = ask_user_for_voltage_value / ask_user_for_resistance_value
             print(f"The value of the voltage is {current}A.")
-        except:
-            ZeroDivisionError
+        except ZeroDivisionError:
+            print("\nError\nCannot be divide to 0.")
+        except ValueError:
+            print("\nInvalid input.")
             
 find_voltage()
 
