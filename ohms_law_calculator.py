@@ -4,8 +4,9 @@
 print("What do you want to calculate?\n1 = Voltage\n2 = Current\n3 = Resistance\nPick from 1-3")
 ask_what_to_calculate = input("Input your choice here: ")
 
-# # - Conditional Statement: If Voltage was chosen.
+# === Computation using conditional statement ==
 def find_voltage():
+    # - Conditional Statement: If voltage was chosen.
     if ask_what_to_calculate == "1":
         print("If so, give me the values of current and resistance so that we could find the value of the voltage.")
         try:
@@ -15,6 +16,7 @@ def find_voltage():
             print(f"The value of the voltage is {voltage}V.")
         except ValueError:
             print("\nError.\nInvalid input.")
+    # - Conditional Statement: If current was chosen.
     elif ask_what_to_calculate == "2":
         print("If so, give me the values of voltage and resistance so that we could find the value of the current.")
         try:
@@ -26,6 +28,7 @@ def find_voltage():
             print("\nError.\nCannot be divide to 0.")
         except ValueError:
             print("\nError.\nInvalid input.")
+    # - Conditional Statement: If resistance was chosen.
     elif ask_what_to_calculate == "3":
         print("If so, give me the values of voltage and current so that we could find the value of the resistance.")
         try:
@@ -41,7 +44,3 @@ def find_voltage():
         print("Not among the mentioned choices.")
             
 find_voltage()
-
-# - Ask user for the values of the remaining variables or quantities.
-# - Computation using conditional statement
-# - Printing the result
