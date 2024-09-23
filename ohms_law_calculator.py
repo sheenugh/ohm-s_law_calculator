@@ -21,7 +21,18 @@ def find_voltage():
             ask_user_for_voltage_value = float(input("Voltage Value: "))
             ask_user_for_resistance_value = float(input("Resistance Value: "))
             current = ask_user_for_voltage_value / ask_user_for_resistance_value
-            print(f"The value of the voltage is {current}A.")
+            print(f"The value of the current is {current}A.")
+        except ZeroDivisionError:
+            print("\nError.\nCannot be divide to 0.")
+        except ValueError:
+            print("\nError.\nInvalid input.")
+    elif ask_what_to_calculate == "3":
+        print("If so, give me the values of voltage and current so that we could find the value of the resistance.")
+        try:
+            ask_user_for_voltage_value = float(input("Voltage Value: "))
+            ask_user_for_current_value = float(input("Current Value: "))
+            resistance = ask_user_for_voltage_value / ask_user_for_current_value
+            print(f"The value of the resistance is {resistance}Ω.")
         except ZeroDivisionError:
             print("\nError.\nCannot be divide to 0.")
         except ValueError:
